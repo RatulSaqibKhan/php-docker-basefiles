@@ -1,0 +1,30 @@
+# Ignore Git repo
+.git
+.gitignore
+
+# Composer / PHP build artifacts
+vendor/
+composer.lock
+
+# NodeJS artifacts (if present in projects)
+node_modules/
+npm-debug.log
+yarn.lock
+
+# Logs
+*.log
+storage/
+logs/
+
+# Docker-related
+Dockerfile*
+.dockerignore
+
+# OS & IDE files
+.DS_Store
+.idea/
+.vscode/
+
+# Environment files
+.env
+.env.*

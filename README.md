@@ -16,16 +16,18 @@ This repository organizes reusable templates for PHP environments such as <b>Apa
 ```bash
 php-docker-basefiles/
 │
+├── LICENSE
+├── php-apache
+│   ├── conf.d
+│   │   ├── error.ini
+│   │   ├── opcache.ini
+│   │   └── php.ini
+│   └── v8.4
+│       └── Dockerfile
 ├── README.md
-│
-├── php8.4-apache/
-│   ├── Dockerfile
-│   └── entrypoint.sh
-│
-└── shared/
-    ├── scripts/
-    ├── configs/
-    └── README.md
+└── shared
+    ├── configs
+    └── scripts
 ```
 ## 🧱 Available Base Images
 
@@ -53,12 +55,12 @@ This repository may include different types of base images:
     For example, using php8.4-apache:
     
     ```bash
-      cd php8.4-apache
+      cd project_root
     ```
 
 3. Build the Docker image
     ```bash
-      docker build -t base-php84-apache .
+      docker build -f ./php-apache/v8.4/Dockerfile -t base-php84-apache .
     ```
 
 4. Extend in your application <br>
@@ -87,6 +89,12 @@ Inside each variant folder, you can:
 - Modify Apache or FPM configs
 - Extend the base to match project-specific needs
 - Each base image is intentionally minimal, so you can build on top of it as required.
+
+## 📦 Docker Hub Images
+
+Prebuilt images for various PHP versions and variants are available here:
+
+👉 **Docker Hub Repository:** https://hub.docker.com/r/ratulsaqibkhan/base-php
 
 ## 📝 Contributing
 
